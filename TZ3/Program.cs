@@ -8,24 +8,14 @@ namespace TZ3
     {
         static void Main(string[] args)
         {
-            Random random = new Random();  
-            
-            int [,,] MyArray = new int [4, 3, 5];
 
-            for (int i = 0; i < MyArray.GetLength(0); i++)
+            int[] MyArray = { 20, 5, 7, 1, 3, 11, 82, 64, 4, 16 };
+
+            for (int i = 0; i < MyArray.Length; i++)
             {
-                for (int y = 0; y < MyArray.GetLength(1); y++)
-                {
-                    for (int r = 0; r < MyArray.GetLength(2); r++)
-                    {
-
-                    }
-
-
-                }
-
 
             }
+
             
 
         }
