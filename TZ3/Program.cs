@@ -102,11 +102,42 @@ namespace TZ3
             }
             Console.WriteLine("\n-----------------------\n");
 
-
+            //Сортировка массива
+            //По возрастанию
+            Console.WriteLine("Сорировка массива по возрастанию");
             Array.Sort(MyArray);
-            Array.ForEach(MyArray, Console.Write);
-            Array.ForEach()
+            for (int i = 0; i < MyArray.Length; i++)
+            {
+                Console.Write(MyArray[i] + "\t");
 
+            }
+                //Array.ForEach(MyArray, Console.WriteLine);
+                Console.WriteLine("\n-----------------------\n");
+
+            //По убыванию
+            Console.WriteLine("Сорировка массива по убыванию");
+            Array.Sort(MyArray);
+            Array.Reverse(MyArray);
+            for (int i = 0; i < MyArray.Length; i++)
+            {
+                Console.Write(MyArray[i] + "\t");
+
+            }
+            //Array.ForEach(MyArray, Console.WriteLine);
+            Console.WriteLine("\n-----------------------\n");
+
+            //Четные, а после нечетные числа
+            Console.WriteLine("Четные, а после нечетные числа");
+            Array.Sort(MyArray);
+            for (int i = 0; i < MyArray.Length; i++)
+            {
+                    while (MyArray[i] % 2 == 0)
+                    {
+                        Console.WriteLine(MyArray[i]);
+                    }
+                }
+                
+            }
         }
     }
 }
