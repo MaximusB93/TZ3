@@ -5,11 +5,12 @@ using System.Text;
 
 namespace TZ3
 {
-    internal class Program
+
+
+    internal class ArrayOutput
     {
-        static void Main(string[] args)
+        public static int[] ArrayOut()
         {
-            //Сумма четных и нечетных чисел
             Random rand = new Random();
             Console.WriteLine("Введите величину массива");
             int ValueArray = int.Parse(Console.ReadLine());
@@ -19,11 +20,23 @@ namespace TZ3
 
             for (int i = 0; i < MyArray.Length; i++)
             {
-                MyArray[i] = rand.Next(1, 100);
+                MyArray[i] = rand.Next(100);
                 Console.Write(MyArray[i] + "\t");
             }
             Console.WriteLine("\n");
             Console.WriteLine("\n-----------------------\n");
+            return MyArray;
+        }
+    }
+
+
+    internal class Program
+    {
+        public static void Main(int[] myArray)
+        {         
+            ArrayOutput.ArrayOut();
+            int [] Array = new int[;
+            //Сумма четных и нечетных чисел
             int SumEvenNumbers = 0;
             int SumOddNumbers = 0;
             for (int i = 0; i < MyArray.Length; i++)
@@ -111,11 +124,11 @@ namespace TZ3
                 Console.Write(MyArray[i] + "\t");
 
             }
-                //Array.ForEach(MyArray, Console.WriteLine);
-                Console.WriteLine("\n-----------------------\n");
+            //Array.ForEach(MyArray, Console.WriteLine);
+            Console.WriteLine("\n-----------------------\n");
 
             //По убыванию
-            Console.WriteLine("Сорировка массива по убыванию");
+            Console.WriteLine("Сортировка массива по убыванию");
             Array.Sort(MyArray);
             Array.Reverse(MyArray);
             for (int i = 0; i < MyArray.Length; i++)
@@ -131,12 +144,17 @@ namespace TZ3
             Array.Sort(MyArray);
             for (int i = 0; i < MyArray.Length; i++)
             {
-                    while (MyArray[i] % 2 == 0)
-                    {
-                        Console.WriteLine(MyArray[i]);
-                    }
+                if (MyArray[i] % 2 == 0)
+                {
+                    Console.Write(MyArray[i] + "\t");
                 }
-                
+            }
+            for (int i = 0; i < MyArray.Length; i++)
+            {
+                if (MyArray[i] % 2 != 0)
+                {
+                    Console.Write(MyArray[i] + "\t");
+                }
             }
         }
     }
