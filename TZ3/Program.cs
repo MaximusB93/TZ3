@@ -197,7 +197,7 @@ namespace TZ3
 
             //Двухмерные массивы
             Random rand2 = new Random();
-            int[,] TwoArray = new int[3, 3];
+            int[,] TwoArray = new int[5, 5];
             Console.WriteLine("Массив выведен рандомно");
             for (int i = 0; i < TwoArray.GetLength(0); i++)
             {
@@ -294,9 +294,9 @@ namespace TZ3
             Array.Copy(TwoArray, 0, TwoArray4, 0, TwoArray.Length);
             for (int i = 0; i < TwoArray4.GetLength(0); i++)
             {
-                for (int j = 0; j < TwoArray3.GetLength(1); j++)
+                for (int j = 0; j < TwoArray4.GetLength(1); j++)
                 {
-                    if (i < j)
+                    if (i > 1 - j + 1)
                     {
                         Console.Write(TwoArray4[i, j] = 0);
                         Console.Write(" ");
@@ -304,6 +304,32 @@ namespace TZ3
                     else
                     {
                         Console.Write(TwoArray4[i, j]);
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-----------------------\n");
+
+            //Обнулить элементы выше побочной диагонали
+            int n = TwoArray.GetLength(0);
+            Console.WriteLine("Обнулить элементы выше побочной диагонали");
+            int[,] TwoArray5 = new int[n, n];
+            Array.Copy(TwoArray, 0, TwoArray5, 0, TwoArray.Length);
+
+            for (int i = 0; i < TwoArray5.GetLength(0); i++)
+            {
+                for (int j = 0; j < TwoArray5.GetLength(1); j++)
+                {
+                    if (i < n - j + 1)
+                    {
+                        TwoArray5[i, j] = 0;
+                        Console.Write(TwoArray5[i, j]);
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(TwoArray5[i, j]);
                         Console.Write(" ");
                     }
                 }
