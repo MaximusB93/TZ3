@@ -9,6 +9,37 @@ namespace TZ3
     {
         public static void Main()
         {
+            Func1(ArrayRand(5), 5);
+
+
+        }
+
+        public static void Func1(int[,] TwoArray, int n)
+        {
+            //Обнулить элементы ниже побочной диагонали
+            Console.WriteLine("Обнулить элементы ниже побочной диагонали");
+            for (int i = n - 1; i > 0; i--)
+            {
+                for (int j = n - 1; j > n - i - 1; j--)
+                {
+                    TwoArray[i, j] = 0;
+
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(TwoArray[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-----------------------\n");
+        }
+        public static void Func2(int[,] TwoArray)
+        {
             ////Наполнение и вывод массива на консоль
             //Console.WriteLine("Введите величину массива");
             //int ValueArray = int.Parse(Console.ReadLine());
@@ -196,19 +227,8 @@ namespace TZ3
             //}
 
             //Двухмерные массивы
-            Random rand2 = new Random();
-            int[,] TwoArray = new int[5, 5];
-            Console.WriteLine("Массив выведен рандомно");
-            for (int i = 0; i < TwoArray.GetLength(0); i++)
-            {
-                for (int j = 0; j < TwoArray.GetLength(1); j++)
-                {
-                    Console.Write(TwoArray[i, j] = rand2.Next(15));
-                    Console.Write(" ");
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("\n-----------------------\n");
+            int n = 5;
+
 
             //Сумма двухзначных элементов
             Console.WriteLine("Сумма двухзначных чисел двухмерного массива");
@@ -288,31 +308,9 @@ namespace TZ3
             }
             Console.WriteLine("\n-----------------------\n");
 
-            //Обнулить элементы ниже побочной диагонали
-            Console.WriteLine("Обнулить элементы ниже побочной диагонали");
-            int[,] TwoArray4 = new int[TwoArray.GetLength(0), TwoArray.GetLength(1)];
-            Array.Copy(TwoArray, 0, TwoArray4, 0, TwoArray.Length);
-            for (int i = 0; i < TwoArray4.GetLength(0); i++)
-            {
-                for (int j = 0; j < TwoArray4.GetLength(1); j++)
-                {
-                    if (i > 1 - j + 1)
-                    {
-                        Console.Write(TwoArray4[i, j] = 0);
-                        Console.Write(" ");
-                    }
-                    else
-                    {
-                        Console.Write(TwoArray4[i, j]);
-                        Console.Write(" ");
-                    }
-                }
-                Console.WriteLine();
-            }
-            Console.WriteLine("\n-----------------------\n");
+
 
             //Обнулить элементы выше побочной диагонали
-            int n = TwoArray.GetLength(0);
             Console.WriteLine("Обнулить элементы выше побочной диагонали");
             int[,] TwoArray5 = new int[n, n];
             Array.Copy(TwoArray, 0, TwoArray5, 0, TwoArray.Length);
@@ -336,6 +334,52 @@ namespace TZ3
                 Console.WriteLine();
             }
             Console.WriteLine("\n-----------------------\n");
+
+            //Супер-массив  
+            Console.WriteLine("Супер-массив");
+            Console.WriteLine("Укажите размерность массива");
+            int length = int.Parse(Console.ReadLine());
+            int[,] SuperArray = new int[length, length];
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    //Console.WriteLine(SuperArray[i, j] = rand2.Next(1, 50));
+                }
+            }
+            Console.WriteLine("Введите число меньше которого нужно обнулить");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if (i > j & number > SuperArray[i, j])
+                    {
+                        SuperArray[i, j] = 0;
+                        Console.Write(SuperArray[i, j]);
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static int[,] ArrayRand(int n)
+        {
+            Random rand2 = new Random();
+            int[,] TwoArray = new int[n, n];
+            Console.WriteLine("Массив выведен рандомно");
+            for (int i = 0; i < TwoArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < TwoArray.GetLength(1); j++)
+                {
+                    Console.Write(TwoArray[i, j] = rand2.Next(10, 99));
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-----------------------\n");
+            return TwoArray;
         }
     }
 }
