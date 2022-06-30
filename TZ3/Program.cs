@@ -18,8 +18,8 @@ namespace TZ3
             //Console.WriteLine("Массив рандомно наполнен");
             //for (int i = 0; i < MyArray.Length; i++)
             //{
-            //    MyArray[i] = rand.Next(20);
-            //    Console.Write(MyArray[i] + "\t");
+            // MyArray[i] = rand.Next(20);
+            // Console.Write(MyArray[i] + "\t");
             //}
             //Console.WriteLine("\n");
             //Console.WriteLine("\n-----------------------\n");
@@ -88,42 +88,42 @@ namespace TZ3
             //int MinElementArray = MyArray.Min();
             //for (int i = 0; i < MyArray.Length; i++)
             //{
-            //    if (MyArray[i] == MaxElementArray)
+            // if (MyArray[i] == MaxElementArray)
             //    {
-            //        Console.Write(MinElementArray + "\t");
+            // Console.Write(MinElementArray + "\t");
             //    }
-            //    else if (MyArray[i] == MinElementArray)
+            // else if (MyArray[i] == MinElementArray)
             //    {
-            //        Console.Write(MaxElementArray + "\t");
+            // Console.Write(MaxElementArray + "\t");
             //    }
-            //    else
+            // else
             //    {
-            //        Console.Write(MyArray[i] + "\t");
+            // Console.Write(MyArray[i] + "\t");
             //    }
             //}
             //Console.WriteLine("\n-----------------------\n");
 
             ////Сортировка массива
             ////По возрастанию
-            //Console.WriteLine("Сорировка массива по возрастанию");
+            //Console.WriteLine("Сортировка массива по возрастанию");
             //int[] MyArray2 = new int[MyArray.Length];
             //Array.Copy(MyArray, 0, MyArray2, 0, MyArray.Length);
             //Array.Sort(MyArray2);
             //for (int i = 0; i < MyArray2.Length; i++)
             //{
-            //    Console.Write(MyArray2[i] + "\t");
+            // Console.Write(MyArray2[i] + "\t");
 
             //}
             ////Array.ForEach(MyArray, Console.WriteLine);
             //Console.WriteLine("\n-----------------------\n");
 
             ////По убыванию
-            //Console.WriteLine("Сортировка массива по убыванию");           
+            //Console.WriteLine("Сортировка массива по убыванию"); 
             //Array.Sort(MyArray2);
             //Array.Reverse(MyArray2);
             //for (int i = 0; i < MyArray2.Length; i++)
             //{
-            //    Console.Write(MyArray2[i] + "\t");
+            // Console.Write(MyArray2[i] + "\t");
 
             //}
             ////Array.ForEach(MyArray, Console.WriteLine);
@@ -134,16 +134,16 @@ namespace TZ3
             //Array.Sort(MyArray2);
             //for (int i = 0; i < MyArray2.Length; i++)
             //{
-            //    if (MyArray2[i] % 2 == 0)
+            // if (MyArray2[i] % 2 == 0)
             //    {
-            //        Console.Write(MyArray2[i] + "\t");
+            // Console.Write(MyArray2[i] + "\t");
             //    }
             //}
             //for (int i = 0; i < MyArray2.Length; i++)
             //{
-            //    if (MyArray2[i] % 2 != 0)
+            // if (MyArray2[i] % 2 != 0)
             //    {
-            //        Console.Write(MyArray2[i] + "\t");
+            // Console.Write(MyArray2[i] + "\t");
             //    }
             //}
             //Console.WriteLine("\n-----------------------\n");
@@ -154,31 +154,29 @@ namespace TZ3
             //int Counter = int.Parse(Console.ReadLine());
             //switch (Counter)
             //{
-            //    case 1:
-            //        Console.WriteLine("Четные числа");
-            //        for (int i = 0; i < MyArray.Length; i++)
+            // case 1:
+            // Console.WriteLine("Четные числа");
+            // for (int i = 0; i < MyArray.Length; i++)
             //        {
-            //            if (MyArray[i] % 2 == 0)
+            // if (MyArray[i] % 2 == 0)
             //            {
-            //                Console.Write(MyArray[i] + "\t");
+            // Console.Write(MyArray[i] + "\t");
             //            }
             //        }
-            //        break;
-
-
-            //    case 2:
-            //        Console.WriteLine("Нечетные числа");
-            //        for (int i = 0; i < MyArray.Length; i++)
+            // break;
+            // case 2:
+            // Console.WriteLine("Нечетные числа");
+            // for (int i = 0; i < MyArray.Length; i++)
             //        {
-            //            if (MyArray[i] % 2 != 0)
+            // if (MyArray[i] % 2 != 0)
             //            {
-            //                Console.Write(MyArray[i] + "\t");
+            // Console.Write(MyArray[i] + "\t");
             //            }
             //        }
-            //        break;
-            //    default:
-            //        Console.WriteLine("Такого значения нет");
-            //        break;
+            // break;
+            // default:
+            // Console.WriteLine("Такого значения нет");
+            // break;
             //}
             //Console.WriteLine("\n-----------------------\n");
 
@@ -186,14 +184,14 @@ namespace TZ3
             //Console.WriteLine("Обнуление двухзначных чисел");
             //for (int i = 0; i < MyArray.Length; i++)
             //{
-            //    if (MyArray[i] > 9 & 100 > MyArray[i])
+            // if (MyArray[i] > 9 & 100 > MyArray[i])
             //    {
-            //        MyArray[i] = 0;
-            //        Console.Write(MyArray[i] + "\t");
+            // MyArray[i] = 0;
+            // Console.Write(MyArray[i] + "\t");
             //    }
-            //    else
+            // else
             //    {
-            //        Console.Write(MyArray[i] + "\t");
+            // Console.Write(MyArray[i] + "\t");
             //    }
             //}
 
@@ -244,16 +242,74 @@ namespace TZ3
             Console.WriteLine(FiveNumberSum);
             Console.WriteLine("\n-----------------------\n");
 
-            for (int i = 0; i < TwoArray.GetLength(0); i++)
+            //Обнулить элементы ниже главной диагонали
+            Console.WriteLine("Обнулить элементы ниже главной диагонали");
+            int[,] TwoArray2 = new int[TwoArray.GetLength(0), TwoArray.GetLength(1)];
+            Array.Copy(TwoArray, 0, TwoArray2, 0, TwoArray.Length);
+            for (int i = 0; i < TwoArray2.GetLength(0); i++)
             {
-                for (int j = 0; j < TwoArray.GetLength(1); j++)
+                for (int j = 0; j < TwoArray2.GetLength(1); j++)
                 {
-                    if (TwoArray[i, j] == 5)
+                    if (i > j)
                     {
-                        FiveNumberSum += TwoArray[i, j];
+                        Console.Write(TwoArray2[i, j] = 0);
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(TwoArray2[i, j]);
+                        Console.Write(" ");
                     }
                 }
+                Console.WriteLine();
             }
+            Console.WriteLine("\n-----------------------\n");
+
+            //Обнулить элементы выше главной диагонали
+            Console.WriteLine("Обнулить элементы выше главной диагонали");
+            int[,] TwoArray3 = new int[TwoArray.GetLength(0), TwoArray.GetLength(1)];
+            Array.Copy(TwoArray, 0, TwoArray3, 0, TwoArray.Length);
+            for (int i = 0; i < TwoArray3.GetLength(0); i++)
+            {
+                for (int j = 0; j < TwoArray3.GetLength(1); j++)
+                {
+                    if (i < j)
+                    {
+                        Console.Write(TwoArray3[i, j] = 0);
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(TwoArray3[i, j]);
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-----------------------\n");
+
+            //Обнулить элементы ниже побочной диагонали
+            Console.WriteLine("Обнулить элементы ниже побочной диагонали");
+            int[,] TwoArray4 = new int[TwoArray.GetLength(0), TwoArray.GetLength(1)];
+            Array.Copy(TwoArray, 0, TwoArray4, 0, TwoArray.Length);
+            for (int i = 0; i < TwoArray4.GetLength(0); i++)
+            {
+                for (int j = 0; j < TwoArray3.GetLength(1); j++)
+                {
+                    if (i < j)
+                    {
+                        Console.Write(TwoArray4[i, j] = 0);
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(TwoArray4[i, j]);
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-----------------------\n");
         }
     }
 }
