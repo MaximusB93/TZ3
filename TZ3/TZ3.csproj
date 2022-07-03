@@ -40,7 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsfdsfdsf.cs" />
+    <Compile Include="ArrayOutput.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="SelectionElements.cs" />
+    <Compile Include="ArraySearch.cs" />
+    <Compile Include="SuperArray.cs" />
+    <Compile Include="TwoDimensionalArrays.cs" />
+    <Compile Include="SortingArray.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
