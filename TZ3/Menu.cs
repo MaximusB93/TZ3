@@ -16,13 +16,13 @@ namespace TZ3
             Console.WriteLine("Двумерный массив - 2\n");
             Console.WriteLine("Супер-массив - 3\n");
             Console.WriteLine("Введите значение\n");
-            int meaning = int.Parse(Console.ReadLine());
-            int[] Array = ArrayOutput.ArrayRand();
-            int [,] TwoArray = ArrayOutput.TwoArrayRand();
+            int meaning = int.Parse(Console.ReadLine());                     
             switch (meaning)
             {
-
                 case 1:
+                    Console.Clear();
+                    Console.WriteLine("-----------------------");
+                    int[] Array = ArrayOutput.ArrayRand();
                     ArraySearch.SumOddEvenElements(Array);
                     ArraySearch.MinMaxElements(Array);
                     ArraySearch.PermutationMinMaxElements(Array);
@@ -34,15 +34,17 @@ namespace TZ3
 
                     SelectionElements.EvenOrOddElements(Array);
                     SelectionElements.ZeroingTwoDigitElements(Array);
-
-
                     break;
                 case 2:
+                    Console.Clear();
+                    Console.WriteLine("-----------------------");
+                    int[,] TwoArray = ArrayOutput.TwoArrayRand();
                     TwoDimensionalArrays.SumTwoDigitElements(TwoArray);
                     TwoDimensionalArrays.SumElementsFive(TwoArray);
                     TwoDimensionalArrays.ResetElementsBelowMainDiagonal(TwoArray);
                     TwoDimensionalArrays.ResetElementsHigherMainDiagonal(TwoArray);
-
+                    TwoDimensionalArrays.ResetElementsHigherSideDiagonal(TwoArray);
+                    TwoDimensionalArrays.ResetElementsBelowSideDiagonal(TwoArray);
                     break;
                 case 3:
 

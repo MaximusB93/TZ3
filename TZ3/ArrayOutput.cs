@@ -17,7 +17,6 @@ namespace TZ3
         {
             Console.WriteLine("Введите величину массива");
             int ValueArray = int.Parse(Console.ReadLine());
-            Console.Clear();
             Random rand = new Random();
             int[] MyArray = new int[ValueArray];
             Console.WriteLine("Массив рандомно наполнен");
@@ -37,7 +36,7 @@ namespace TZ3
         /// <returns></returns>
         public static int[,] TwoArrayRand()
         {
-            Console.WriteLine("Введите величину массива");
+            Console.WriteLine("Введите величину двумерное массива");
             int ValueArray = int.Parse(Console.ReadLine());
             Random rand2 = new Random();
             int[,] TwoArray = new int[ValueArray, ValueArray];
@@ -46,13 +45,35 @@ namespace TZ3
             {
                 for (int j = 0; j < TwoArray.GetLength(1); j++)
                 {
-                    Console.Write(TwoArray[i, j] = rand2.Next(10, 99));
+                    Console.Write(TwoArray[i, j] = rand2.Next(0, 9));
                     Console.Write(" ");
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("\n-----------------------\n");
             return TwoArray;
+        }
+        /// <summary>
+        /// Вывод супер-массива
+        /// </summary>
+        /// <returns></returns>
+        public static int[,] SuperArrayRand()
+        {
+            Random random = new Random();
+            Console.WriteLine("Супер-массив");
+            Console.WriteLine("Укажите размерность массива");
+            int length = int.Parse(Console.ReadLine());
+            int[,] SuperArray = new int[length, length];
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    Console.Write(SuperArray[i, j] = random.Next(1, 50));
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+            return SuperArray;
         }
     }
 }
