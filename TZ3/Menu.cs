@@ -47,7 +47,11 @@ namespace TZ3
                     TwoDimensionalArrays.ResetElementsBelowSideDiagonal(TwoArray);
                     break;
                 case 3:
-
+                    Console.Clear();
+                    Console.WriteLine("-----------------------");
+                    int[,] SuperArray = ArrayOutput.SuperArrayRand();
+                    SuperArrayClass.ResetElementsHigherMainDiagonal(SuperArray);
+                    SuperArrayClass.OutputElementsSideDiagonal(SuperArray);                  
                     break;
                 default:
                     Console.WriteLine("Такого значения нет");

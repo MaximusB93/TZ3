@@ -45,7 +45,7 @@
     <Compile Include="Menu.cs" />
     <Compile Include="SelectionElements.cs" />
     <Compile Include="ArraySearch.cs" />
-    <Compile Include="SuperArray.cs" />
+    <Compile Include="SuperArrayClass.cs" />
     <Compile Include="TwoDimensionalArrays.cs" />
     <Compile Include="SortingArray.cs" />
     <Compile Include="Program.cs" />

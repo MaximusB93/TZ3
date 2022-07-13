@@ -8,29 +8,30 @@ namespace TZ3
 {/// <summary>
 /// Супер-массив
 /// </summary>
-    internal class SuperArray
+    internal class SuperArrayClass
     {
         /// <summary>
         /// Обнуление чисел выше главной диагонали и меньше выбранного числа
         /// </summary>
         public static void ResetElementsHigherMainDiagonal(int[,] SuperArray)
         {
+            int[,] SuperArrayClone = (int[,])SuperArray.Clone();
             Console.WriteLine("Введите число меньше которого нужно обнулить");
             int number = int.Parse(Console.ReadLine());
             Console.WriteLine("Обнуление чисел выше главной диагонали и меньше выбранного числа");
-            for (int i = 0; i < SuperArray.GetLength(0); i++)
+            for (int i = 0; i < SuperArrayClone.GetLength(0); i++)
             {
-                for (int j = 0; j < SuperArray.GetLength(0); j++)
+                for (int j = 0; j < SuperArrayClone.GetLength(0); j++)
                 {
-                    if (i < j & number > SuperArray[i, j])
+                    if (i < j & number > SuperArrayClone[i, j])
                     {
-                        SuperArray[i, j] = 0;
-                        Console.Write(SuperArray[i, j]);
+                        SuperArrayClone[i, j] = 0;
+                        Console.Write(SuperArrayClone[i, j]);
                         Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(SuperArray[i, j]);
+                        Console.Write(SuperArrayClone[i, j]);
                         Console.Write(" ");
                     }
                 }
@@ -53,7 +54,7 @@ namespace TZ3
                 {
                     if (i < (SuperArray.GetLength(0) - 2) - j + 1 & SuperArray[i, j] < number)
                     {
-                        Console.Write(SuperArray[i, j] + "/t");
+                        Console.Write(SuperArray[i, j] + "\t");
                     }
                 }
             }

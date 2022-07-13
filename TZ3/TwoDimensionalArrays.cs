@@ -56,21 +56,21 @@ namespace TZ3
         /// </summary>
         public static void ResetElementsBelowMainDiagonal(int[,] TwoArray)
         {
-            int 
-            
+
+            int[,] CloneTwoArray = (int[,])TwoArray.Clone();
             Console.WriteLine("Обнулить элементы ниже главной диагонали");
-            for (int i = 0; i < TwoArray.GetLength(0); i++)
+            for (int i = 0; i < CloneTwoArray.GetLength(0); i++)
             {
-                for (int j = 0; j < TwoArray.GetLength(1); j++)
+                for (int j = 0; j < CloneTwoArray.GetLength(1); j++)
                 {
                     if (i > j)
                     {
-                        Console.Write(TwoArray[i, j] = 0);
+                        Console.Write(CloneTwoArray[i, j] = 0);
                         Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(TwoArray[i, j]);
+                        Console.Write(CloneTwoArray[i, j]);
                         Console.Write(" ");
                     }
                 }
@@ -83,19 +83,20 @@ namespace TZ3
         /// </summary>
         public static void ResetElementsHigherMainDiagonal(int[,] TwoArray)
         {
+            int[,] CloneTwoArray = (int[,])TwoArray.Clone();
             Console.WriteLine("Обнулить элементы выше главной диагонали");
-            for (int i = 0; i < TwoArray.GetLength(0); i++)
+            for (int i = 0; i < CloneTwoArray.GetLength(0); i++)
             {
-                for (int j = 0; j < TwoArray.GetLength(1); j++)
+                for (int j = 0; j < CloneTwoArray.GetLength(1); j++)
                 {
                     if (i < j)
                     {
-                        Console.Write(TwoArray[i, j] = 0);
+                        Console.Write(CloneTwoArray[i, j] = 0);
                         Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(TwoArray[i, j]);
+                        Console.Write(CloneTwoArray[i, j]);
                         Console.Write(" ");
                     }
                 }
@@ -108,20 +109,21 @@ namespace TZ3
         /// </summary>
         public static void ResetElementsHigherSideDiagonal(int[,] TwoArray)
         {
+            int[,] CloneTwoArray = (int[,])TwoArray.Clone();
             Console.WriteLine("Обнулить элементы выше побочной диагонали");
-            for (int i = 0; i < TwoArray.GetLength(0); i++)
+            for (int i = 0; i < CloneTwoArray.GetLength(0); i++)
             {
-                for (int j = 0; j < TwoArray.GetLength(1); j++)
+                for (int j = 0; j < CloneTwoArray.GetLength(1); j++)
                 {
-                    if (i < (TwoArray.GetLength(0) - 2) - j + 1)
+                    if (i < (CloneTwoArray.GetLength(0) - 2) - j + 1)
                     {
-                        TwoArray[i, j] = 0;
-                        Console.Write(TwoArray[i, j]);
+                        CloneTwoArray[i, j] = 0;
+                        Console.Write(CloneTwoArray[i, j]);
                         Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(TwoArray[i, j]);
+                        Console.Write(CloneTwoArray[i, j]);
                         Console.Write(" ");
                     }
                 }
@@ -136,13 +138,14 @@ namespace TZ3
         /// <param name="n"></param>
         public static void ResetElementsBelowSideDiagonal(int[,] TwoArray)
         {
-            int n = TwoArray.GetLength(0); 
+            int[,] CloneTwoArray = (int[,])TwoArray.Clone();
+            int n = CloneTwoArray.GetLength(0);
             Console.WriteLine("Обнулить элементы ниже побочной диагонали");
             for (int i = n - 1; i > 0; i--)
             {
                 for (int j = n - 1; j > n - i - 1; j--)
                 {
-                    TwoArray[i, j] = 0;
+                    CloneTwoArray[i, j] = 0;
                 }
                 Console.WriteLine();
             }
@@ -150,7 +153,7 @@ namespace TZ3
             {
                 for (int j = 0; j < n; j++)
                 {
-                    Console.Write(TwoArray[i, j]);
+                    Console.Write(CloneTwoArray[i, j]);
                     Console.Write(" ");
                 }
                 Console.WriteLine();
